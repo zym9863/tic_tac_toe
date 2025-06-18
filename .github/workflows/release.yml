@@ -11,6 +11,11 @@ on:
         required: true
         default: 'v1.0.0'
 
+permissions:
+  contents: write
+  id-token: write
+  actions: read
+
 jobs:
   build-android:
     runs-on: ubuntu-latest
@@ -27,7 +32,7 @@ jobs:
       - name: 设置 Flutter
         uses: subosito/flutter-action@v2
         with:
-          flutter-version: '3.24.5'
+          flutter-version: '3.32.4'
           channel: 'stable'
 
       - name: 获取依赖
@@ -52,7 +57,7 @@ jobs:
       - name: 设置 Flutter
         uses: subosito/flutter-action@v2
         with:
-          flutter-version: '3.24.5'
+          flutter-version: '3.32.4'
           channel: 'stable'
 
       - name: 启用 Windows 桌面支持
